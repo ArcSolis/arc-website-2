@@ -6,7 +6,7 @@ function Footer() {
       <div className="shell footer-shell">
         <div className="footer-brand-block">
           <img
-            src="/arcsolis-logo.svg"
+            src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/d0d5f83b-bae3-4df6-ba20-b95d30aec4c0"
             alt="ArcSolis logo"
             className="footer-logo"
           />
