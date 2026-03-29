@@ -79,7 +79,7 @@ export default function Home() {
         <div className="shell nav-shell">
           <a href="#top" className="brand">
             <img
-              src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9d410b9f-d5d5-401a-867e-f9aadb06b6e2"
+              src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9b833648-e63e-4217-a1bf-9ede7107aefa"
               alt="ArcSolis logo"
               className="brand-mark"
             />
@@ -492,7 +492,7 @@ export default function Home() {
         <div className="shell footer-shell">
           <div className="footer-brand-block">
             <img
-              src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9d410b9f-d5d5-401a-867e-f9aadb06b6e2"
+              src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9b833648-e63e-4217-a1bf-9ede7107aefa"
               alt="ArcSolis logo"
               className="footer-logo"
             />
