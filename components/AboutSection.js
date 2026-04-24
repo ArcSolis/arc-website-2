@@ -5,27 +5,20 @@ function AboutSection() {
         <div className="about-media" aria-hidden="true" />
         <div className="about-copy">
           <p className="eyebrow">Why ArcSolis</p>
-          <h2>One partner across pixels and concrete.</h2>
+          <h2>Engineering advisors rooted in the field.</h2>
           <p>
-            ArcSolis blends product managers, designers, software engineers and
-            technical leads with experience in built environments. The mix
-            reduces gaps between interface, infrastructure and field work.
+            ArcSolis brings engineers, project leaders and designers together
+            around one job helping you reach better outcomes on oil and gas
+            work.
           </p>
           <p>
-            Teams in Lagos, Abuja and across West Africa work with us when
-            digital systems, equipment and spaces need to line up without slow
-            handoffs.
+            We work across West Africa with operators, investors and EPC teams
+            who want strong independent views without heavy overhead.
           </p>
           <ul className="about-list">
-            <li>Vendor neutral advice across tools, platforms and suppliers.</li>
-            <li>
-              Product thinking that respects engineering realities and delivery
-              schedules.
-            </li>
-            <li>
-              Transparent reporting so sponsors follow scope, budget and impact
-              in one view.
-            </li>
+            <li>Vendor neutral advice across studies, FEED and detailed design.</li>
+            <li>Experience on both greenfield and brownfield projects.</li>
+            <li>Clear written outputs that speak to technical and commercial leads.</li>
           </ul>
         </div>
       </div>

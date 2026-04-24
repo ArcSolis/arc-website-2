@@ -11,8 +11,8 @@ function Footer() {
             className="footer-logo"
           />
           <p>
-            ArcSolis Limited brings software, product design, engineering design
-            and general contracting support into one focused partner.
+            ArcSolis Limited provides engineering consulting and project
+            advisory services for oil and gas developments.
           </p>
         </div>
         <div className="footer-columns">
@@ -49,8 +49,8 @@ function Footer() {
           <div>
             <h3>Stay informed</h3>
             <p>
-              Sign up to receive occasional notes on product, software and
-              engineering delivery.
+              Sign up to receive short notes on engineering delivery and
+              project risk.
             </p>
             <form
               className="footer-form"
