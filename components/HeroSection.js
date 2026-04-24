@@ -1,55 +1,50 @@
+import { Button } from "./ui/button";
+
 function HeroSection({ onScrollToProcess }) {
   return (
     <section className="hero" id="solutions">
       <div className="hero-bg-gradient" aria-hidden="true" />
       <div className="shell hero-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Software, product and engineering</p>
+          <p className="eyebrow">Oil and gas engineering consulting</p>
           <h1>
-            Ship digital products and infrastructure with one partner across
-            software and engineering.
+            Sharper decisions on complex projects.
           </h1>
           <p className="lead">
-            ArcSolis is a studio with roots in Lagos and Abuja. We combine
-            product strategy, software development, engineering design and
-            general contracting so teams move from sketch to launch without
-            friction.
+            ArcSolis Limited helps technical teams review concepts, challenge
+            designs and keep upstream and midstream work on firm ground.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn primary">
-              Talk to our team
-            </a>
-            <button
-              type="button"
-              className="btn ghost"
+            <Button href="#contact" variant="primary">
+              Speak with an engineer
+            </Button>
+            <Button
+              variant="outline"
               onClick={onScrollToProcess}
             >
-              See how delivery works
-            </button>
+              See our engagement model
+            </Button>
           </div>
-          <dl className="hero-metrics" aria-label="Service highlights">
+          <dl className="hero-metrics" aria-label="ArcSolis focus areas">
             <div>
-              <dt>4</dt>
-              <dd>
-                Core disciplines across software, design, engineering and site
-                delivery.
-              </dd>
+              <dt>Concept to handover</dt>
+              <dd>Support from early studies through commissioning.</dd>
             </div>
             <div>
-              <dt>End to end</dt>
-              <dd>From first wireframe through signed contract and handover.</dd>
+              <dt>Independent view</dt>
+              <dd>Objective advice alongside your internal teams.</dd>
             </div>
             <div>
-              <dt>One team</dt>
-              <dd>Digital and physical workstreams stay inside one partnership.</dd>
+              <dt>Field aware</dt>
+              <dd>Design choices tested against real site conditions.</dd>
             </div>
           </dl>
         </div>
-        <aside className="hero-panel" aria-label="Delivery snapshot">
+        <aside className="hero-panel" aria-label="Engagement snapshot">
           <div className="hero-panel-card">
-            <h2>Platform and site view</h2>
+            <h2>Project at a glance</h2>
             <p className="hero-panel-meta">
-              A joined picture across product backlogs, drawings and field work.
+              One view of wells, facilities and schedule risk.
             </p>
             <div className="hero-panel-chart">
               <div className="hero-panel-bar hero-panel-bar--solar" />
@@ -58,21 +53,21 @@ function HeroSection({ onScrollToProcess }) {
             </div>
             <ul className="hero-panel-stats">
               <li>
-                <span>Software</span>
-                <strong>Product roadmap and sprints</strong>
+                <span>Technical</span>
+                <strong>Basis of design checks</strong>
               </li>
               <li>
-                <span>Engineering</span>
-                <strong>Drawings and coordination</strong>
+                <span>Commercial</span>
+                <strong>Scope and interface clarity</strong>
               </li>
               <li>
                 <span>Delivery</span>
-                <strong>Contracting and field progress</strong>
+                <strong>Risks surfaced early</strong>
               </li>
             </ul>
             <p className="hero-panel-footnote">
-              Dashboards align product owners, engineers and site teams around
-              one source of truth.
+              Dashboards align project owners, advisors and contractors around
+              the same picture.
             </p>
           </div>
         </aside>

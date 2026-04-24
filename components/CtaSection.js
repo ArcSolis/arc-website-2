@@ -1,13 +1,15 @@
+import { Button } from "./ui/button";
+
 function CtaSection() {
   return (
     <section className="section section-cta" id="contact">
       <div className="shell cta-shell">
         <div className="cta-copy">
           <p className="eyebrow">Next step</p>
-          <h2>Bring software and engineering under one roof.</h2>
+          <h2>Discuss an oil and gas project with our team.</h2>
           <p>
-            Share a short outline of your product or project and our team will
-            respond within two business days with a proposed path.
+            Share a short outline of your project and we follow up within two
+            business days with a suggested path.
           </p>
           <form
             className="cta-form"
@@ -33,12 +35,12 @@ function CtaSection() {
               </label>
             </div>
             <label className="full-width">
-              <span>Describe your product or project</span>
+              <span>Describe your project</span>
               <textarea name="message" rows={4} required />
             </label>
-            <button type="submit" className="btn primary">
-              Request a working session
-            </button>
+            <Button variant="primary" className="cta-button">
+              Request a consulting session
+            </Button>
           </form>
         </div>
       </div>

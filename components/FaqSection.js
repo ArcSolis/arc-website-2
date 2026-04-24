@@ -2,29 +2,29 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What does ArcSolis focus on?",
+    question: "What kind of work does ArcSolis support?",
     answer:
-      "ArcSolis works across software development, product design, engineering design and general contracting.",
+      "We focus on consulting for oil and gas projects across studies, FEED, detailed design and execution support.",
   },
   {
-    question: "Who is a good fit for your team?",
+    question: "Who do you usually work with?",
     answer:
-      "We work with founders, operations leaders and project sponsors who need one partner from idea through build and handover.",
+      "We partner with project sponsors, engineering managers and investors who need an independent technical view.",
   },
   {
-    question: "Do you only run full builds?",
+    question: "Do you replace existing engineering teams?",
     answer:
-      "No. We support audits, roadmaps, design sprints and technical reviews as focused engagements.",
+      "No. We work alongside your internal staff and external contractors to bring extra focus and perspective.",
   },
   {
-    question: "How do projects normally start?",
+    question: "How do projects start?",
     answer:
-      "Most projects begin with a short discovery where we review goals, constraints and existing assets then agree the first phase.",
+      "Most engagements start with a short discovery call and a light touch review of current documents.",
   },
   {
-    question: "Where do you work?",
+    question: "Where do you operate?",
     answer:
-      "Our core team sits in Nigeria and supports work across West Africa and select remote clients.",
+      "ArcSolis is based in Nigeria and supports work across West Africa and selected international clients.",
   },
 ];
 

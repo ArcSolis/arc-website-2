@@ -29,10 +29,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ArcSolis | Software, Product and Engineering Partners</title>
+        <title>ArcSolis Limited | Oil and Gas Engineering Consulting</title>
         <meta
           name="description"
-          content="ArcSolis blends software development, product design, engineering design and general contracting so teams ship digital products and infrastructure with one partner."
+          content="ArcSolis Limited provides engineering consulting and project advisory services for oil and gas developments across West Africa."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
