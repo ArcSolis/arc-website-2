@@ -72,11 +72,6 @@ function Footer() {
           <div className="footer-legal">
             <p>&copy; {year} ArcSolis Limited. All rights reserved.</p>
           </div>
-          <div className="footer-social-meta">
-            <a href="https://www.arc-solis.com" target="_blank" rel="noreferrer">
-              arc-solis.com
-            </a>
-          </div>
         </div>
       </div>
     </footer>
