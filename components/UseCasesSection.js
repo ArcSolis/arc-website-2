@@ -1,75 +1,49 @@
+import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card";
 
 function UseCasesSection() {
+  const capabilities = [
+    {
+      title: "Concept & Feasibility",
+      description: "Independent engineering review of early-stage studies before major capital commitments."
+    },
+    {
+      title: "FEED & Design Support",
+      description: "Rigorous review of deliverables, comment logs and multi-discipline interfaces."
+    },
+    {
+      title: "Brownfield Modifications",
+      description: "Verification of tie-ins, shutdown windows and constructability in live environments."
+    },
+    {
+      title: "Vendor Selection",
+      description: "Support for technical scope definition and objective bid evaluation for major packages."
+    },
+    {
+      title: "Project Recovery",
+      description: "Technical diagnostic of schedule slippage with focused action plans for value protection."
+    },
+    {
+      title: "Operations Handover",
+      description: "Commissioning support to ensure smooth transition from construction to stable operations."
+    }
+  ];
+
   return (
-    <section className="section section-use-cases">
+    <section className="section-use-cases" id="solutions">
       <div className="shell">
-        <p className="eyebrow center">Where we help most</p>
-        <h2 className="section-title center">
-          Typical consulting briefs for ArcSolis.
-        </h2>
+        <div className="section-header">
+          <p className="eyebrow">Expertise</p>
+          <h2 className="section-title">Capabilities.</h2>
+        </div>
 
         <div className="use-case-grid">
-          <Card>
-            <CardHeader>
-              <CardTitle>Concept and feasibility reviews</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Bring a second set of eyes to early studies before major spend.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>FEED and detailed design support</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Review deliverables, comment logs and discipline interfaces.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Brownfield modifications</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Check tie ins, shutdown windows and construction methods.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Vendor and EPC selection</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Support scope definition and technical bid evaluation.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Project recovery exercises</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Diagnose slippage, propose quick actions and focus on value.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Operations and handover support</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Smooth the path from construction to stable operations.
-              </CardDescription>
-            </CardContent>
-          </Card>
+          {capabilities.map((item, idx) => (
+            <article key={idx} className="use-case-card">
+              <h3 className="use-case-title">{item.title}</h3>
+              <p className="use-case-description">{item.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -77,3 +51,4 @@ function UseCasesSection() {
 }
 
 export default UseCasesSection;
+

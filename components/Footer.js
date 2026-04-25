@@ -1,90 +1,82 @@
+import React from "react";
+
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
-      <div className="shell footer-shell">
-        <div className="footer-brand-block">
-          <img
-            src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/d0d5f83b-bae3-4df6-ba20-b95d30aec4c0"
-            alt="ArcSolis logo"
-            className="footer-logo"
-          />
-          <p>
-            ArcSolis Limited provides engineering consulting and project
-            advisory services for oil and gas developments.
-          </p>
-        </div>
-        <div className="footer-columns">
-          <div>
-            <h3>Contact</h3>
-            <p>
-              22, Samora Machel Street,
-              <br />
-              Asokoro, Abuja.
+      <div className="shell">
+        <div className="footer-top">
+          <div className="footer-brand-info">
+            <a href="#top" className="brand">
+              <img
+                src="/arcsolis-logo.png"
+                alt="ArcSolis logo"
+                className="brand-mark"
+              />
+            </a>
+            <p className="footer-description">
+              Technical advisory and engineering consulting for complex energy infrastructure projects. High-leverage expertise for rigorous delivery.
             </p>
-            <p>
-              <a href="mailto:info@arc-solis.com">info@arc-solis.com</a>
-              <br />
-              <a href="tel:+2347087862502">+234 708 786 2502</a>
-            </p>
+            <div className="footer-contact-details">
+              <p>22, Samora Machel Street, Asokoro, Abuja.</p>
+              <p><a href="mailto:info@arc-solis.com">info@arc-solis.com</a></p>
+              <p><a href="tel:+2347087862502">+234 708 786 2502</a></p>
+            </div>
           </div>
-          <div>
-            <h3>Quick links</h3>
-            <ul>
-              <li>
-                <a href="#solutions">Services</a>
-              </li>
-              <li>
-                <a href="#process">Process</a>
-              </li>
-              <li>
-                <a href="#stories">Work</a>
-              </li>
-              <li>
-                <a href="#contact">Start a project</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>Stay informed</h3>
-            <p>
-              Sign up to receive short notes on engineering delivery and
-              project risk.
-            </p>
-            <form
-              className="footer-form"
-              action="https://formspree.io/f/mgegdgqe"
-              method="POST"
-            >
-              <label>
-                <span className="sr-only">Email address</span>
+          
+          <div className="footer-nav-grid">
+            <div className="footer-nav-col">
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="#process">Methodology</a></li>
+                <li><a href="#about">Capabilities</a></li>
+                <li><a href="#stories">Case Studies</a></li>
+                <li><a href="#insights">Insights</a></li>
+              </ul>
+            </div>
+            <div className="footer-nav-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+              </ul>
+            </div>
+            <div className="footer-newsletter">
+              <h4>Technical Updates</h4>
+              <p>Brief notes on engineering risk and delivery methodology.</p>
+              <form
+                className="footer-subscribe-form"
+                action="https://formspree.io/f/mgegdgqe"
+                method="POST"
+              >
                 <input
                   type="email"
                   name="email"
-                  placeholder="you@example.com"
+                  placeholder="Email address"
                   required
                 />
-              </label>
-              <button type="submit" className="btn secondary full">
-                Get updates
-              </button>
-            </form>
+                <button type="submit">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom">
-        <div className="shell footer-bottom-shell">
-          <p>&copy; {year} ArcSolis Limited. All rights reserved.</p>
-          <p>
-            <a
-              href="https://www.arc-solis.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.arc-solis.com
+        
+        <div className="footer-bottom">
+          <div className="footer-legal">
+            <p>&copy; {year} ArcSolis Limited. All rights reserved.</p>
+          </div>
+          <div className="footer-social-meta">
+            <a href="https://www.arc-solis.com" target="_blank" rel="noreferrer">
+              arc-solis.com
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

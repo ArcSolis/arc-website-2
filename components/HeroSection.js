@@ -1,74 +1,63 @@
 import { Button } from "./ui/button";
+import { GeometricShapes } from "./ui/GeometricShapes";
 
 function HeroSection({ onScrollToProcess }) {
   return (
-    <section className="hero" id="solutions">
-      <div className="hero-bg-gradient" aria-hidden="true" />
+    <section className="hero" id="hero">
+      <GeometricShapes />
       <div className="shell hero-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Oil and gas engineering consulting</p>
-          <h1>
-            Sharper decisions on complex projects.
-          </h1>
+          <p className="eyebrow">Engineering Advisory</p>
+          <h1>Sharper decisions on complex projects.</h1>
           <p className="lead">
-            ArcSolis Limited helps technical teams review concepts, challenge
-            designs and keep upstream and midstream work on firm ground.
+            ArcSolis helping technical teams review concepts, challenge designs, and maintain architectural integrity on energy infrastructure developments.
           </p>
           <div className="hero-actions">
             <Button href="#contact" variant="primary">
-              Speak with an engineer
+              Speak with an Engineer
             </Button>
             <Button
               variant="outline"
               onClick={onScrollToProcess}
             >
-              See our engagement model
+              Our Methodology
             </Button>
           </div>
-          <dl className="hero-metrics" aria-label="ArcSolis focus areas">
-            <div>
-              <dt>Concept to handover</dt>
-              <dd>Support from early studies through commissioning.</dd>
-            </div>
-            <div>
-              <dt>Independent view</dt>
-              <dd>Objective advice alongside your internal teams.</dd>
-            </div>
-            <div>
-              <dt>Field aware</dt>
-              <dd>Design choices tested against real site conditions.</dd>
-            </div>
-          </dl>
         </div>
-        <aside className="hero-panel" aria-label="Engagement snapshot">
+        
+        <aside className="hero-panel" aria-label="Project Intelligence">
           <div className="hero-panel-card">
-            <h2>Project at a glance</h2>
-            <p className="hero-panel-meta">
-              One view of wells, facilities and schedule risk.
-            </p>
-            <div className="hero-panel-chart">
-              <div className="hero-panel-bar hero-panel-bar--solar" />
-              <div className="hero-panel-bar hero-panel-bar--battery" />
-              <div className="hero-panel-bar hero-panel-bar--grid" />
+            <div className="panel-header">
+              <div className="panel-title">
+                <h3>Project Intelligence</h3>
+                <p>Facilities Risk Index</p>
+              </div>
+              <div className="panel-status">Live</div>
             </div>
-            <ul className="hero-panel-stats">
-              <li>
-                <span>Technical</span>
-                <strong>Basis of design checks</strong>
-              </li>
-              <li>
-                <span>Commercial</span>
-                <strong>Scope and interface clarity</strong>
-              </li>
-              <li>
-                <span>Delivery</span>
-                <strong>Risks surfaced early</strong>
-              </li>
-            </ul>
-            <p className="hero-panel-footnote">
-              Dashboards align project owners, advisors and contractors around
-              the same picture.
-            </p>
+
+            <div className="panel-viz-grid">
+              {[0.8, 0.6, 0.9, 0.4, 0.7, 0.85].map((val, i) => (
+                <div key={i} className="viz-bar-wrap">
+                  <div 
+                    className="viz-bar-fill" 
+                    style={{ height: `${val * 100}%` }} 
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="panel-metrics-list">
+              {[
+                { label: "Technical", value: "Design Basis Verified" },
+                { label: "Interface", value: "Clarity Confirmed" },
+                { label: "Risk", value: "Mitigation Active" }
+              ].map((item, i) => (
+                <div key={i} className="panel-metric-item">
+                  <span className="metric-label">{item.label}</span>
+                  <span className="metric-value">{item.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </aside>
       </div>
