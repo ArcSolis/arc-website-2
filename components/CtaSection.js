@@ -1,46 +1,56 @@
 import { Button } from "./ui/button";
+import React from "react";
 
 function CtaSection() {
   return (
     <section className="section section-cta" id="contact">
-      <div className="shell cta-shell">
-        <div className="cta-copy">
-          <p className="eyebrow">Next step</p>
-          <h2>Discuss an oil and gas project with our team.</h2>
-          <p>
-            Share a short outline of your project and we follow up within two
-            business days with a suggested path.
-          </p>
+      <div className="shell">
+        <div className="cta-container">
+          <div className="cta-header">
+            <p className="eyebrow">Technical Advisory</p>
+            <h2 className="section-title">Schedule a deep-dive.</h2>
+            <p className="cta-intro">
+              Briefly describe your project requirements below. Our technical lead will review and respond within 48 hours with a structured approach.
+            </p>
+          </div>
+          
           <form
-            className="cta-form"
+            className="cta-form-technical"
             action="https://formspree.io/f/xeqybpna"
             method="POST"
           >
-            <div className="form-grid">
-              <label>
-                <span>Full name</span>
-                <input name="name" required />
-              </label>
-              <label>
-                <span>Organisation</span>
-                <input name="organisation" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                <span>Phone</span>
-                <input name="phone" />
-              </label>
+            <div className="form-technical-grid">
+              <div className="form-field">
+                <label htmlFor="name">Full Name</label>
+                <input id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="organisation">Organisation</label>
+                <input id="organisation" name="organisation" placeholder="Energy Corp" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="email">Work Email</label>
+                <input id="email" type="email" name="email" placeholder="john@company.com" required />
+              </div>
+              <div className="form-field">
+                <label htmlFor="phone">Contact Number</label>
+                <input id="phone" name="phone" placeholder="+234 ..." />
+              </div>
             </div>
-            <label className="full-width">
-              <span>Describe your project</span>
-              <textarea name="message" rows={4} required />
-            </label>
-            <Button variant="primary" className="cta-button">
-              Request a consulting session
-            </Button>
+            
+            <div className="form-field full-width">
+              <label htmlFor="message">Project Requirements / Scope Outline</label>
+              <textarea id="message" name="message" rows={5} placeholder="Describe the current stage, technical challenges, and desired outcomes..." required />
+            </div>
+            
+            <div className="form-footer">
+              <p className="form-disclaimer">
+                By submitting this form, you agree to our privacy policy and data handling protocols.
+              </p>
+              <Button variant="primary" className="btn-wide">
+                Submit Consultation Request
+              </Button>
+            </div>
           </form>
         </div>
       </div>

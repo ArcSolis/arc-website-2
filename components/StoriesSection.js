@@ -1,50 +1,46 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card";
 
+import React from "react";
+
 function StoriesSection() {
+  const stories = [
+    {
+      title: "Gas processing expansion review",
+      meta: "Upstream Infrastructure",
+      text: "We reviewed process schemes, piping layouts and control philosophy then flagged interfaces that threatened schedule and uptime."
+    },
+    {
+      title: "Offshore tie-in concept support",
+      meta: "Subsea & Marine",
+      text: "Our team challenged assumptions on routing, access and constructability so the client moved forward with confidence on a major brownfield link."
+    },
+    {
+      title: "Terminal automation upgrade",
+      meta: "Midstream Controls",
+      text: "We helped define scope, reviewed vendor proposals and guided cut-over planning for a busy export terminal in the Delta."
+    }
+  ];
+
   return (
-    <section className="section section-stories" id="stories">
+    <section className="section-stories" id="stories">
       <div className="shell">
-        <p className="eyebrow center">Selected work</p>
-        <h2 className="section-title center">Examples from recent mandates.</h2>
+        <div className="section-header">
+          <p className="eyebrow">Case Studies</p>
+          <h2 className="section-title">Selected Mandates.</h2>
+        </div>
 
         <div className="card-grid">
-          <Card>
-            <CardHeader>
-              <CardTitle>Gas processing expansion review</CardTitle>
-              <CardDescription>Independent review for a gas plant upgrade.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                We reviewed process schemes, piping layouts and control
-                philosophy then flagged interfaces that threatened schedule and
-                uptime.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Offshore tie in concept support</CardTitle>
-              <CardDescription>Advisory for an offshore tie in study.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Our team challenged assumptions on routing, access and
-                constructability so the client moved forward with confidence.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Terminal automation upgrade</CardTitle>
-              <CardDescription>Controls and integration guidance.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>
-                We helped define scope, reviewed vendor proposals and guided cut
-                over planning for a busy export terminal.
-              </p>
-            </CardContent>
-          </Card>
+          {stories.map((story, idx) => (
+            <article key={idx} className="story-card">
+              <header className="story-header">
+                <span className="story-meta">{story.meta}</span>
+                <h3 className="story-title">{story.title}</h3>
+              </header>
+              <div className="story-body">
+                <p className="story-text">{story.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -52,3 +48,4 @@ function StoriesSection() {
 }
 
 export default StoriesSection;
+

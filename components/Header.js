@@ -8,11 +8,10 @@ function Header() {
       <div className="shell nav-shell">
         <a href="#top" className="brand">
           <img
-            src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/d0d5f83b-bae3-4df6-ba20-b95d30aec4c0"
+            src="/arcsolis-logo.png"
             alt="ArcSolis logo"
             className="brand-mark"
           />
-          <span className="brand-text">ArcSolis</span>
         </a>
         <button
           className="nav-toggle"
@@ -24,12 +23,12 @@ function Header() {
           <span />
         </button>
         <nav className={`nav${navOpen ? " open" : ""}`} aria-label="Main">
-          <a href="#solutions">Services</a>
-          <a href="#process">Process</a>
-          <a href="#stories">Work</a>
-          <a href="#insights">Insights</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact" className="nav-cta">
+          <a href="#solutions" onClick={() => setNavOpen(false)}>Services</a>
+          <a href="#process" onClick={() => setNavOpen(false)}>Process</a>
+          <a href="#stories" onClick={() => setNavOpen(false)}>Work</a>
+          <a href="#insights" onClick={() => setNavOpen(false)}>Insights</a>
+          <a href="#faq" onClick={() => setNavOpen(false)}>FAQ</a>
+          <a href="#contact" className="nav-cta" onClick={() => setNavOpen(false)}>
             Start a project
           </a>
         </nav>
