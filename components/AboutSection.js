@@ -34,7 +34,13 @@ function AboutSection() {
             </ul>
           </div>
           <div className="about-media-wrap">
-            <div className="about-media-box" aria-hidden="true" />
+            <div className="about-media-box">
+              <img 
+                src="/project-oversight.jpg" 
+                alt="Engineers reviewing project blueprints" 
+                className="about-image" 
+              />
+            </div>
             <div className="about-badge">Project Oversight</div>
           </div>
         </div>
