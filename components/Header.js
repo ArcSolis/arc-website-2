@@ -1,10 +1,18 @@
 import { useState } from "react";
+import { MotionSection } from "./ui/motion";
 
 function Header() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <header className="site-header">
+    <MotionSection
+      as="header"
+      className="site-header"
+      mode="mount"
+      direction="down"
+      distance={24}
+      duration={0.65}
+    >
       <div className="shell nav-shell">
         <a href="#top" className="brand">
           <img
@@ -33,7 +41,7 @@ function Header() {
           </a>
         </nav>
       </div>
-    </header>
+    </MotionSection>
   );
 }
 

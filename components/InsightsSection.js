@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function InsightsSection() {
   const insights = [
@@ -20,16 +21,26 @@ function InsightsSection() {
   ];
 
   return (
-    <section className="section-insights" id="insights">
+    <MotionSection className="section-insights" id="insights" direction="left">
       <div className="shell">
-        <div className="section-header">
-          <p className="eyebrow">Resources</p>
-          <h2 className="section-title">Technical Insights.</h2>
-        </div>
+        <MotionGroup className="section-header" staggerChildren={0.1}>
+          <MotionItem as="p" className="eyebrow" direction="left" distance={24}>
+            Resources
+          </MotionItem>
+          <MotionItem as="h2" className="section-title" direction="left" distance={38}>
+            Technical Insights.
+          </MotionItem>
+        </MotionGroup>
 
-        <div className="insights-grid">
+        <MotionGroup className="insights-grid" staggerChildren={0.12} delayChildren={0.16}>
           {insights.map((item, idx) => (
-            <article key={idx} className="insight-card">
+            <MotionItem
+              key={idx}
+              as="article"
+              className="insight-card"
+              direction={idx % 2 === 0 ? "left" : "right"}
+              distance={30}
+            >
               <span className="technical-note">Technical Note</span>
               <div className="insight-type">Insight</div>
               <h3 className="insight-title">{item.title}</h3>
@@ -40,11 +51,11 @@ function InsightsSection() {
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-            </article>
+            </MotionItem>
           ))}
-        </div>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

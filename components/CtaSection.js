@@ -2,6 +2,7 @@
 
 import { Button } from "./ui/button";
 import React, { useState } from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function CtaSection() {
   const [status, setStatus] = useState("idle");
@@ -34,21 +35,28 @@ function CtaSection() {
   };
 
   return (
-    <section className="section section-cta" id="contact">
+    <MotionSection className="section section-cta" id="contact" direction="right">
       <div className="shell">
-        <div className="cta-container">
-          <div className="cta-header">
-            <p className="eyebrow">Technical Advisory</p>
-            <h2 className="section-title">Schedule a deep-dive.</h2>
-            <p className="cta-intro">
+        <MotionGroup className="cta-container" staggerChildren={0.12}>
+          <MotionGroup className="cta-header" staggerChildren={0.1}>
+            <MotionItem as="p" className="eyebrow" direction="left" distance={24}>
+              Technical Advisory
+            </MotionItem>
+            <MotionItem as="h2" className="section-title" direction="left" distance={38}>
+              Schedule a deep-dive.
+            </MotionItem>
+            <MotionItem as="p" className="cta-intro" direction="left" distance={28}>
               Briefly describe your project requirements below. Our technical lead will review and respond within 48 hours with a structured approach.
-            </p>
-          </div>
-          
-          <form
+            </MotionItem>
+          </MotionGroup>
+
+          <MotionItem
+            as="form"
             className="cta-form-technical"
             action="https://formspree.io/f/xeqybpna"
             method="POST"
+            direction="right"
+            distance={42}
             onSubmit={handleSubmit}
           >
             <div className="form-technical-grid">
@@ -95,10 +103,10 @@ function CtaSection() {
                 )}
               </div>
             </div>
-          </form>
-        </div>
+          </MotionItem>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

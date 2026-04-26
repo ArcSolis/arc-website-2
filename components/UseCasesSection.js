@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function UseCasesSection() {
   const capabilities = [
@@ -30,25 +30,34 @@ function UseCasesSection() {
   ];
 
   return (
-    <section className="section-use-cases" id="solutions">
+    <MotionSection className="section-use-cases" id="solutions" direction="right">
       <div className="shell">
-        <div className="section-header">
-          <p className="eyebrow">Expertise</p>
-          <h2 className="section-title">Capabilities.</h2>
-        </div>
+        <MotionGroup className="section-header" staggerChildren={0.1}>
+          <MotionItem as="p" className="eyebrow" direction="right" distance={24}>
+            Expertise
+          </MotionItem>
+          <MotionItem as="h2" className="section-title" direction="right" distance={38}>
+            Capabilities.
+          </MotionItem>
+        </MotionGroup>
 
-        <div className="use-case-grid">
+        <MotionGroup className="use-case-grid" staggerChildren={0.1} delayChildren={0.14}>
           {capabilities.map((item, idx) => (
-            <article key={idx} className="use-case-card">
+            <MotionItem
+              key={idx}
+              as="article"
+              className="use-case-card"
+              direction={idx % 2 === 0 ? "right" : "left"}
+              distance={28}
+            >
               <h3 className="use-case-title">{item.title}</h3>
               <p className="use-case-description">{item.description}</p>
-            </article>
+            </MotionItem>
           ))}
-        </div>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 
 export default UseCasesSection;
-
