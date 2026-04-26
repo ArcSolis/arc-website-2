@@ -1,8 +1,39 @@
+"use client";
+
 import { Button } from "./ui/button";
 import React from "react";
 import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function CtaSection() {
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <MotionSection className="section section-cta" id="contact" direction="right">
       <div className="shell">
@@ -30,28 +61,28 @@ function CtaSection() {
             <div className="form-technical-grid">
               <div className="form-field">
                 <label htmlFor="name">Full Name</label>
-                <input id="name" name="name" placeholder="John Doe" required />
+                <input id="name" name="name" placeholder="John Doe" required disabled={status === "submitting" || status === "success"} />
               </div>
               <div className="form-field">
                 <label htmlFor="organisation">Organisation</label>
-                <input id="organisation" name="organisation" placeholder="Energy Corp" />
+                <input id="organisation" name="organisation" placeholder="Energy Corp" disabled={status === "submitting" || status === "success"} />
               </div>
               <div className="form-field">
                 <label htmlFor="email">Work Email</label>
-                <input id="email" type="email" name="email" placeholder="john@company.com" required />
+                <input id="email" type="email" name="email" placeholder="john@company.com" required disabled={status === "submitting" || status === "success"} />
               </div>
               <div className="form-field">
                 <label htmlFor="phone">Contact Number</label>
-                <input id="phone" name="phone" placeholder="+234 ..." />
+                <input id="phone" name="phone" placeholder="+234 ..." disabled={status === "submitting" || status === "success"} />
               </div>
             </div>
             
             <div className="form-field full-width">
               <label htmlFor="message">Project Requirements / Scope Outline</label>
-              <textarea id="message" name="message" rows={5} placeholder="Describe the current stage, technical challenges, and desired outcomes..." required />
+              <textarea id="message" name="message" rows={5} placeholder="Describe the current stage, technical challenges, and desired outcomes..." required disabled={status === "submitting" || status === "success"} />
             </div>
             
-            <div className="form-footer">
+            <div className="form-footer" style={{ alignItems: "flex-start" }}>
               <p className="form-disclaimer">
                 By submitting this form, you agree to our privacy policy and data handling protocols.
               </p>
