@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 const faqs = [
   {
@@ -36,22 +37,29 @@ function FaqSection() {
   };
 
   return (
-    <section className="section-faq" id="faq">
+    <MotionSection className="section-faq" id="faq" direction="left">
       <div className="shell">
-        <div className="section-header">
-          <p className="eyebrow">Technical Support</p>
-          <h2 className="section-title">Frequently asked questions.</h2>
-        </div>
-        
-        <div className="faq-grid">
-          <div className="faq-list" role="list">
+        <MotionGroup className="section-header" staggerChildren={0.1}>
+          <MotionItem as="p" className="eyebrow" direction="left" distance={24}>
+            Technical Support
+          </MotionItem>
+          <MotionItem as="h2" className="section-title" direction="left" distance={38}>
+            Frequently asked questions.
+          </MotionItem>
+        </MotionGroup>
+
+        <MotionGroup className="faq-grid" staggerChildren={0.12} delayChildren={0.12}>
+          <MotionGroup className="faq-list" role="list" staggerChildren={0.08}>
             {faqs.map((item, index) => {
               const isOpen = openFaqIndex === index;
               return (
-                <article
+                <MotionItem
                   className={`faq-item${isOpen ? " is-open" : ""}`}
                   role="listitem"
                   key={item.question}
+                  as="article"
+                  direction={index % 2 === 0 ? "left" : "right"}
+                  distance={20}
                 >
                   <button
                     className="faq-trigger"
@@ -71,12 +79,12 @@ function FaqSection() {
                       <p>{item.answer}</p>
                     </div>
                   </div>
-                </article>
+                </MotionItem>
               );
             })}
-          </div>
-          
-          <div className="faq-cta-sidebar">
+          </MotionGroup>
+
+          <MotionItem className="faq-cta-sidebar" direction="right" distance={34}>
             <div className="cta-card">
               <h3>Still have questions?</h3>
               <p>Our team is available for deep-dive technical discussions.</p>
@@ -84,10 +92,10 @@ function FaqSection() {
                 Contact Engineering
               </a>
             </div>
-          </div>
-        </div>
+          </MotionItem>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

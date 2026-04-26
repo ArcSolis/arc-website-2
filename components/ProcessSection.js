@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function ProcessSection() {
   const steps = [
@@ -30,34 +31,43 @@ function ProcessSection() {
   ];
 
   return (
-    <section className="section section-process" id="process">
+    <MotionSection className="section section-process" id="process" direction="left">
       <div className="shell">
-        <div className="section-header">
-          <p className="eyebrow">Methodology</p>
-          <h2 className="section-title">A rigorous path to project stability.</h2>
-          <p className="section-intro">
+        <MotionGroup className="section-header" staggerChildren={0.1}>
+          <MotionItem as="p" className="eyebrow" direction="left" distance={24}>
+            Methodology
+          </MotionItem>
+          <MotionItem as="h2" className="section-title" direction="left" distance={38}>
+            A rigorous path to project stability.
+          </MotionItem>
+          <MotionItem as="p" className="section-intro" direction="left" distance={28}>
             Technical consulting requires a predictable rhythm. We move through
             five distinct phases to ensure every decision is grounded in data
             and field reality.
-          </p>
-        </div>
+          </MotionItem>
+        </MotionGroup>
 
-        <ol className="process-grid">
+        <MotionGroup as="ol" className="process-grid" staggerChildren={0.1} delayChildren={0.14}>
           {steps.map((item, idx) => (
-            <li key={idx} className="process-step">
+            <MotionItem
+              key={idx}
+              as="li"
+              className="process-step"
+              direction={idx % 2 === 0 ? "left" : "right"}
+              distance={34}
+            >
               <span className="process-step-label">Phase {item.step}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-            </li>
+            </MotionItem>
           ))}
-          <li className="process-step filler">
+          <MotionItem as="li" className="process-step filler" direction="right" distance={34}>
             <p className="filler-text">Technical excellence by design.</p>
-          </li>
-        </ol>
+          </MotionItem>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 
 export default ProcessSection;
-

@@ -1,6 +1,5 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "./ui/card";
-
 import React from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function StoriesSection() {
   const stories = [
@@ -22,16 +21,26 @@ function StoriesSection() {
   ];
 
   return (
-    <section className="section-stories" id="stories">
+    <MotionSection className="section-stories" id="stories" direction="left">
       <div className="shell">
-        <div className="section-header">
-          <p className="eyebrow">Case Studies</p>
-          <h2 className="section-title">Selected Mandates.</h2>
-        </div>
+        <MotionGroup className="section-header" staggerChildren={0.1}>
+          <MotionItem as="p" className="eyebrow" direction="left" distance={24}>
+            Case Studies
+          </MotionItem>
+          <MotionItem as="h2" className="section-title" direction="left" distance={38}>
+            Selected Mandates.
+          </MotionItem>
+        </MotionGroup>
 
-        <div className="card-grid">
+        <MotionGroup className="card-grid" staggerChildren={0.12} delayChildren={0.14}>
           {stories.map((story, idx) => (
-            <article key={idx} className="story-card">
+            <MotionItem
+              key={idx}
+              as="article"
+              className="story-card"
+              direction={idx % 2 === 0 ? "left" : "right"}
+              distance={30}
+            >
               <header className="story-header">
                 <span className="story-meta">{story.meta}</span>
                 <h3 className="story-title">{story.title}</h3>
@@ -39,13 +48,12 @@ function StoriesSection() {
               <div className="story-body">
                 <p className="story-text">{story.text}</p>
               </div>
-            </article>
+            </MotionItem>
           ))}
-        </div>
+        </MotionGroup>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 
 export default StoriesSection;
-
