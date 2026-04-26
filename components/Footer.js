@@ -1,31 +1,34 @@
 import React from "react";
+import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
+    <MotionSection as="footer" className="site-footer" direction="right">
       <div className="shell">
-        <div className="footer-top">
-          <div className="footer-brand-info">
-            <a href="#top" className="brand">
-              <img
-                src="/arcsolis-logo.png"
-                alt="ArcSolis logo"
-                className="brand-mark"
-              />
-            </a>
-            <p className="footer-description">
+        <MotionGroup className="footer-top" staggerChildren={0.12}>
+          <MotionGroup className="footer-brand-info" staggerChildren={0.08}>
+            <MotionItem direction="left" distance={24}>
+              <a href="#top" className="brand">
+                <img
+                  src="/arcsolis-logo.png"
+                  alt="ArcSolis logo"
+                  className="brand-mark"
+                />
+              </a>
+            </MotionItem>
+            <MotionItem as="p" className="footer-description" direction="left" distance={24}>
               Technical advisory and engineering consulting for complex energy infrastructure projects. High-leverage expertise for rigorous delivery.
-            </p>
-            <div className="footer-contact-details">
+            </MotionItem>
+            <MotionItem className="footer-contact-details" direction="left" distance={24}>
               <p>22, Samora Machel Street, Asokoro, Abuja.</p>
               <p><a href="mailto:info@arc-solis.com">info@arc-solis.com</a></p>
               <p><a href="tel:+2347087862502">+234 708 786 2502</a></p>
-            </div>
-          </div>
-          
-          <div className="footer-nav-grid">
+            </MotionItem>
+          </MotionGroup>
+
+          <MotionItem className="footer-nav-grid" direction="right" distance={30}>
             <div className="footer-nav-col">
               <h4>Platform</h4>
               <ul>
@@ -65,16 +68,16 @@ function Footer() {
                 </button>
               </form>
             </div>
-          </div>
-        </div>
-        
-        <div className="footer-bottom">
+          </MotionItem>
+        </MotionGroup>
+
+        <MotionItem className="footer-bottom" direction="up" distance={24}>
           <div className="footer-legal">
             <p>&copy; {year} ArcSolis Limited. All rights reserved.</p>
           </div>
-        </div>
+        </MotionItem>
       </div>
-    </footer>
+    </MotionSection>
   );
 }
 

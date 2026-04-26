@@ -10,6 +10,7 @@ import InsightsSection from "../components/InsightsSection";
 import CtaSection from "../components/CtaSection";
 import FaqSection from "../components/FaqSection";
 import Footer from "../components/Footer";
+import { AmbientBackdrop } from "../components/ui/AmbientBackdrop";
 
 export default function Home() {
   const scrollToProcess = () => {
@@ -35,29 +36,22 @@ export default function Home() {
           content="ArcSolis Limited provides engineering consulting and project advisory services for oil and gas developments across West Africa."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
       </Head>
-      <Header />
-      <main id="top">
-        <HeroSection onScrollToProcess={scrollToProcess} />
-        <ProcessSection />
-        <AboutSection />
-        <StoriesSection />
-        <UseCasesSection />
-        <InsightsSection />
-        <CtaSection />
-        <FaqSection />
-      </main>
-      <Footer />
+      <div className="page-shell">
+        <AmbientBackdrop />
+        <Header />
+        <main id="top" className="site-main">
+          <HeroSection onScrollToProcess={scrollToProcess} />
+          <ProcessSection />
+          <AboutSection />
+          <StoriesSection />
+          <UseCasesSection />
+          <InsightsSection />
+          <CtaSection />
+          <FaqSection />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
