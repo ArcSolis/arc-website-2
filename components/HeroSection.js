@@ -26,7 +26,7 @@ function HeroSection({ onScrollToProcess }) {
             Sharper decisions on complex projects.
           </MotionItem>
           <MotionItem as="p" className="lead" direction="left" distance={36}>
-            ArcSolis helping technical teams review concepts, challenge designs, and maintain architectural integrity on energy infrastructure developments.
+            ArcSolis helps technical teams review concepts, challenge designs, and maintain architectural integrity on energy infrastructure developments.
           </MotionItem>
           <MotionGroup
             className="hero-actions"
@@ -82,9 +82,9 @@ function HeroSection({ onScrollToProcess }) {
                   distance={18}
                   duration={0.55}
                 >
-                  <div 
-                    className="viz-bar-fill" 
-                    style={{ height: `${val * 100}%` }} 
+                  <div
+                    className="viz-bar-fill"
+                    style={{ height: `${val * 100}%` }}
                   />
                 </MotionItem>
               ))}
