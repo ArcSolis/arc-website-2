@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import React from "react";
+import React, { useState } from "react";
 import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function CtaSection() {
