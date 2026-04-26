@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import React from "react";
+import React, { useState } from "react";
 import { MotionGroup, MotionItem, MotionSection } from "./ui/motion";
 
 function CtaSection() {
@@ -57,6 +57,7 @@ function CtaSection() {
             method="POST"
             direction="right"
             distance={42}
+            onSubmit={handleSubmit}
           >
             <div className="form-technical-grid">
               <div className="form-field">
@@ -86,9 +87,21 @@ function CtaSection() {
               <p className="form-disclaimer">
                 By submitting this form, you agree to our privacy policy and data handling protocols.
               </p>
-              <Button type="submit" variant="primary" className="btn-wide">
-                Submit Consultation Request
-              </Button>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+                <Button variant="primary" className="btn-wide" type="submit" disabled={status === "submitting" || status === "success"}>
+                  {status === "submitting" ? "Submitting..." : status === "success" ? "Submitted" : "Submit Consultation Request"}
+                </Button>
+                {status === "success" && (
+                  <p style={{ color: "#10b981", fontSize: "0.85rem", marginTop: "12px", marginBottom: 0, textAlign: "right", maxWidth: "240px" }}>
+                    Request submitted successfully. We will be in touch within 48 hours.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "12px", marginBottom: 0, textAlign: "right", maxWidth: "240px" }}>
+                    An error occurred. Please try again.
+                  </p>
+                )}
+              </div>
             </div>
           </MotionItem>
         </MotionGroup>
