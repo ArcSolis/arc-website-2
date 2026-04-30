@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MotionSection } from "./ui/motion";
+import { ThemeToggle } from "./ui/ThemeToggle";
 
 function Header() {
   const [navOpen, setNavOpen] = useState(false);
@@ -36,9 +37,12 @@ function Header() {
           <a href="#stories" onClick={() => setNavOpen(false)}>Work</a>
           <a href="#insights" onClick={() => setNavOpen(false)}>Insights</a>
           <a href="#faq" onClick={() => setNavOpen(false)}>FAQ</a>
-          <a href="#contact" className="nav-cta" onClick={() => setNavOpen(false)}>
-            Start a project
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <a href="#contact" className="nav-cta" onClick={() => setNavOpen(false)}>
+              Start a project
+            </a>
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </MotionSection>
